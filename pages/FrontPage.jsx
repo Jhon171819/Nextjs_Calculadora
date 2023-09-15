@@ -33,7 +33,6 @@ export default function FrontPage() {
           
           if (response.ok) {
             const data = await response.json();
-            .
             console.log(data);
             setResultado(data);
           } else {
