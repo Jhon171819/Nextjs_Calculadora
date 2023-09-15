@@ -1,6 +1,6 @@
 import { useState } from "react"
 import styles from "./Styles/FrontPage.module.css"
-export function Front() {
+export default function Front() {
     async function get() {
         try {
           const option = {
