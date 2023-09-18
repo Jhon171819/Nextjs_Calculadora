@@ -43,6 +43,11 @@ export default function FrontPage() {
           console.error('Erro:', error);
         }
       }
+
+
+
+
+
       
 
     const [resultado, setResultado] = useState()
@@ -50,7 +55,7 @@ export default function FrontPage() {
     const [valor2, setValor2] = useState(0)
     return (
         <div className={styles.Container} >
-            
+
             <div className={styles.resultado}>
                 <p>{resultado}</p>
             </div>

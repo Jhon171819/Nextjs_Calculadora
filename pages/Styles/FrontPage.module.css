@@ -7,14 +7,6 @@
     min-height: 100%;
 }
 
-/* styles.css */
-body.dark-mode {
-  background-color: #1a1a1a; /* Cor de fundo escura */
-  color: #fff; /* Cor do texto clara */
-}
-
-
-
 .label {
     justify-content: center;
     display: block;
