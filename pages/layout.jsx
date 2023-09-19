@@ -1,25 +1,6 @@
 import { useState } from "react"
-import styles from "./Styles/FrontPage.module.css"
+import styles from "/app/Styles/FrontPage.module.css"
 export default function FrontPage() {
-    async function get() {
-        try {
-          const option = {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          };
-    
-          const response = await fetch('api/teste', option);
-          const data = await response.json();
-    
-          console.log(data);
-          setResultado(data.message);
-        } catch (error) {
-          console.error('Erro:', error);
-        }
-      }
-
       async function post(Operation) {
         try {
           const option2 = {
@@ -43,12 +24,6 @@ export default function FrontPage() {
           console.error('Erro:', error);
         }
       }
-
-
-
-
-
-      
 
     const [resultado, setResultado] = useState()
     const [valor1, setValor1] = useState(0)
