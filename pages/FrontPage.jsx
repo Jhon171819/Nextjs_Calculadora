@@ -1,5 +1,5 @@
 import { useState } from "react"
-import styles from "/app/Styles/FrontPage.module.css"
+import styles from "./Styles/FrontPage.module.css"
 export default function FrontPage() {
       async function post(Operation) {
         try {
