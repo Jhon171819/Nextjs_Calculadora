@@ -1,10 +1,7 @@
 import { useState } from "react";
 import styles from "./Styles/FrontPage.module.css";
 import React from "react";
-import { Interface } from "readline";
-interface IData {
-  resultado: number;
-}
+
 export default function FrontPage() {
   async function post(Operation: string) {
     try {
@@ -18,8 +15,7 @@ export default function FrontPage() {
       const response = await fetch(`api/operations/${Operation}`, option2);
 
       if (response.ok) {
-        const data: IData = await response.json();
-        console.log(data);
+        const data: number = await response.json();
         setResultado(data);
       } else {
         console.error('Erro na solicitação POST:', response.status, response.statusText);
@@ -29,7 +25,7 @@ export default function FrontPage() {
     }
   }
 
-  const [resultado, setResultado] = useState<IData | undefined>(); 
+  const [resultado, setResultado] = useState<number>(0); 
   const [valor1, setValor1] = useState<number>(0);
   const [valor2, setValor2] = useState<number>(0);
 
