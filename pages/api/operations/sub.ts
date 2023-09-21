@@ -1,4 +1,6 @@
-export default function handler(req, res) {
+import { NextApiRequest, NextApiResponse } from "next"
+
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method == 'POST') {
         const { valor1, valor2} = req.body
         const resultado: number = valor1 - valor2
