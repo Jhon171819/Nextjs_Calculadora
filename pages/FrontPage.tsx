@@ -35,8 +35,9 @@ export default function FrontPage() {
         <p>{resultado}</p>
       </div>
       <div className={styles.label}>
-        <input type="number" onChange={(e) => setValor1(Number(e.target.value))} ></input>
-        <input type="number" onChange={(e) => setValor2(Number(e.target.value))}></input>
+        <input type="number" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValor1(Number(e.target.value))}></input>
+        <input type="number" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValor2(Number(e.target.value))}></input>
+
         <div className={styles.button_container}>
           <button onClick={() => (post('adi'))}>Somar</button>
           <button onClick={() => (post('sub'))}>Subtrair</button>
