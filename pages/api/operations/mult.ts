@@ -5,9 +5,9 @@ interface RequestBody {
   valor2: number
 }
 
-export default function handler(req: NextApiRequest, res: NextApiResponse): void {
+export default function handler (req: NextApiRequest, res: NextApiResponse): void {
   if (req.method === 'POST') {
-    const { valor1, valor2 }: RequestBody = req.body;
+    const { valor1, valor2 }: RequestBody = req.body
 
     if (typeof valor1 === 'number' && typeof valor2 === 'number') {
       const resultado: number = valor1 * valor2
