@@ -4,7 +4,7 @@ export function add (valor1: number, valor2: number): number {
 }
 
 export function sub (valor1: number, valor2: number): number {
-  const resultado = valor1 + valor2
+  const resultado = valor1 - valor2
   return resultado
 }
 export function mult (valor1: number, valor2: number): number {
