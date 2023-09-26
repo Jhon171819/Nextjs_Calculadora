@@ -23,10 +23,31 @@ export default function FrontPage (): React.JSX.Element {
       console.error('Erro:', error)
     }
   }
+  async function get (): Promise<void> {
+    try {
+      const option2 = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+        // body: JSON.stringify({ valor1, valor2, Operation })
+      }
+      const response = await fetch('api/Controller', option2)
+
+      if (response.ok) {
+        const data: number = await response.json()
+        setResultado(data)
+      } else {
+        console.error('Erro na solicitação POST:', response.status, response.statusText)
+      }
+    } catch (error) {
+      console.error('Erro:', error)
+    }
+  }
 
   const [resultado, setResultado] = useState<number>(0)
-  const [valor1, setValor1] = useState<number>(0)
-  const [valor2, setValor2] = useState<number>(0)
+  const [valor1, setValor1] = useState<number>()
+  const [valor2, setValor2] = useState<number>()
   return (
     <div className={styles.Container} >
       <div className={styles.resultado}>
@@ -40,6 +61,7 @@ export default function FrontPage (): React.JSX.Element {
           <button onClick={() => { void post('sub') }}>Subtrair</button>
           <button onClick={() => { void post('mult') }}>Multiplicar</button>
           <button onClick={() => { void post('div') }}>Dividir</button>
+          <button onClick={() => { void get() }}>GET</button>
         </div>
       </div>
     </div>

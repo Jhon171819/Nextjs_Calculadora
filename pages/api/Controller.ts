@@ -1,4 +1,5 @@
-import { add, mult, sub, div } from './op'
+import * as Ops from './operations'
+import * as Error from './ErrorTreatment'
 import { type NextApiRequest, type NextApiResponse } from 'next'
 
 interface RequestBody {
@@ -13,22 +14,22 @@ export default function handler (req: NextApiRequest, res: NextApiResponse): voi
     if (typeof valor1 === 'number' && typeof valor2 === 'number') {
       switch (Operation) {
         case 'add':
-          res.json(add(valor1, valor2))
+          res.json(Ops.add(valor1, valor2))
           break
         case 'mult':
-          res.json(mult(valor1, valor2))
+          res.json(Ops.mult(valor1, valor2))
           break
         case 'div':
-          res.json(div(valor1, valor2))
+          res.json(Ops.div(valor1, valor2))
           break
         case 'sub':
-          res.json(sub(valor1, valor2))
+          res.json(Ops.sub(valor1, valor2))
           break
       }
     } else {
-      res.status(400).json({ message: 'Dados não são numeros' })
+      Error.handlerNotANumber(res)
     }
   } else {
-    res.status(500).json({ message: 'Erro de método de requisição' })
+    Error.handlerInvReqMethod(res)
   }
 }
