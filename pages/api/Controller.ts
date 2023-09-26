@@ -1,29 +1,29 @@
-import * as Ops from './operations'
+import * as Ops from './Operations'
 import * as Error from './ErrorTreatment'
 import { type NextApiRequest, type NextApiResponse } from 'next'
 
 interface RequestBody {
-  valor1: number
-  valor2: number
-  Operation: string
+  value1: number
+  value2: number
+  operation: string
 }
 
 export default function handler (req: NextApiRequest, res: NextApiResponse): void {
   if (req.method === 'POST') {
-    const { valor1, valor2, Operation }: RequestBody = req.body
-    if (typeof valor1 === 'number' && typeof valor2 === 'number') {
-      switch (Operation) {
+    const { value1, value2, operation }: RequestBody = req.body
+    if (typeof value1 === 'number' && typeof value2 === 'number') {
+      switch (operation) {
         case 'add':
-          res.json(Ops.add(valor1, valor2))
+          res.json(Ops.add(value1, value2))
           break
         case 'mult':
-          res.json(Ops.mult(valor1, valor2))
+          res.json(Ops.mult(value1, value2))
           break
         case 'div':
-          res.json(Ops.div(valor1, valor2))
+          res.json(Ops.div(value1, value2))
           break
         case 'sub':
-          res.json(Ops.sub(valor1, valor2))
+          res.json(Ops.sub(value1, value2))
           break
       }
     } else {

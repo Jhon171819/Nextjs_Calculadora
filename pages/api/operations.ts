@@ -1,18 +1,18 @@
-export function add (valor1: number, valor2: number): number {
-  const resultado = valor1 + valor2
-  return resultado
+export function add (value1: number, value2: number): number {
+  const result = value1 + value2
+  return result
 }
 
-export function sub (valor1: number, valor2: number): number {
-  const resultado = valor1 - valor2
-  return resultado
+export function sub (value1: number, value2: number): number {
+  const result = value1 - value2
+  return result
 }
-export function mult (valor1: number, valor2: number): number {
-  const resultado = valor1 * valor2
-  return resultado
+export function mult (value1: number, value2: number): number {
+  const result = value1 * value2
+  return result
 }
 
-export function div (valor1: number, valor2: number): number {
-  const resultado = valor1 / valor2
-  return resultado
+export function div (value1: number, value2: number): number {
+  const result = value1 / value2
+  return result
 }
