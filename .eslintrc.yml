@@ -5,6 +5,7 @@ extends:
   - standard-with-typescript
   - plugin:react/recommended
 parserOptions:
+  commonJS: latest
   ecmaVersion: latest
   sourceType: module
 plugins:

@@ -4,18 +4,18 @@ function add (a: number, b: number): number {
 }
 
 function sub (value1: number, value2: number): number {
-  const result = value1 - value2;
-  return result;
+  const result = value1 - value2
+  return result
 }
 
 function mult (value1: number, value2: number): number {
-  const result = value1 * value2;
-  return result;
+  const result = value1 * value2
+  return result
 }
 
 function div (value1: number, value2: number): number {
-  const result = value1 / value2;
-  return result;
+  const result = value1 / value2
+  return result
 }
 
 module.exports = {
@@ -23,4 +23,4 @@ module.exports = {
   sub,
   mult,
   div
-};
+}
