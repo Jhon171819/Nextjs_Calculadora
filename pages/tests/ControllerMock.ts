@@ -1,16 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-const Error = require('./ErrorTreatment')
-const Ops = require('./Operations')
+const Error = require('../api/ErrorTreatment')
+const Ops = require('../api/Operations')
 
-interface RequestBody {
-  value1: number
-  value2: number
-  operation: string
-}
-
-export default function handler (req: NextApiRequest, res: NextApiResponse): void {
+function handler (req: NextApiRequest, res: NextApiResponse): void {
   if (req.method === 'POST') {
-    const { value1, value2, operation }: RequestBody = req.body
+    const { value1, value2, operation } = req.body
     if (typeof value1 === 'number' && typeof value2 === 'number') {
       switch (operation) {
         case 'add':
@@ -33,3 +27,5 @@ export default function handler (req: NextApiRequest, res: NextApiResponse): voi
     Error.handlerInvReqMethod(res)
   }
 }
+
+module.exports = handler
