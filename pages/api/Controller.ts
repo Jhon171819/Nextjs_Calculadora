@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { NextApiRequest, NextApiResponse } from 'next'
 const Error = require('./ErrorTreatment')
 const Ops = require('./Operations')
