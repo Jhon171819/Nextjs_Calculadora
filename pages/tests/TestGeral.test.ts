@@ -52,7 +52,7 @@ describe('handler function', () => {
     expect(Operations.add).toBeCalledWith(5, 3)
     expect(mockResponse.json).toBeCalledWith(8)
   })
-  
+
   it('should handle Mult function', () => {
     const req = {
       method: 'POST',
