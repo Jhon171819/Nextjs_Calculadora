@@ -2,7 +2,7 @@ import handler from './ControllerMock'
 import * as Operations from '../api/Operations'
 import * as ErrorTreatment from '../api/ErrorTreatment'
 import { type NextApiRequest, type NextApiResponse } from 'next'
-// import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect'
 function createMockResponse (data: any): NextApiResponse {
   return {
     json: jest.fn().mockImplementation(() => data)
@@ -52,7 +52,7 @@ describe('handler function', () => {
     expect(Operations.add).toBeCalledWith(5, 3)
     expect(mockResponse.json).toBeCalledWith(8)
   })
-
+  
   it('should handle Mult function', () => {
     const req = {
       method: 'POST',
