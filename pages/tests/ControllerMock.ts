@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { NextApiRequest, NextApiResponse } from 'next'
-const Error = require('../api/ErrorTreatment')
-const Ops = require('../api/Operations')
+import * as Error from '../api/ErrorTreatment'
+import * as Ops from '../api/Operations'
 
-function handler (req: NextApiRequest, res: NextApiResponse): void {
+export default function handler (req: NextApiRequest, res: NextApiResponse): void {
   if (req.method === 'POST') {
     const { value1, value2, operation } = req.body
     if (typeof value1 === 'number' && typeof value2 === 'number') {
@@ -28,5 +27,3 @@ function handler (req: NextApiRequest, res: NextApiResponse): void {
     Error.handlerInvReqMethod(res)
   }
 }
-
-module.exports = handler

@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-import { NextApiRequest, NextApiResponse } from 'next'
-const Error = require('./ErrorTreatment')
-const Ops = require('./Operations')
+import { type NextApiRequest, type NextApiResponse } from 'next'
+import * as Error from './ErrorTreatment'
+import * as Ops from './Operations'
 
 interface RequestBody {
   value1: number
@@ -27,7 +26,7 @@ export default function handler (req: NextApiRequest, res: NextApiResponse): voi
           res.json(Ops.sub(value1, value2))
           break
       }
-    } else {
+    } else if ((value1 | value2) < 0 && (value1 | value2) > -1) {
       Error.handlerNotANumber(res)
     }
   } else {

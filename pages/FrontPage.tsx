@@ -24,7 +24,7 @@ export default function FrontPage (): React.JSX.Element {
     }
   }
 
-  const [result, setResult] = useState<number>(0)
+  const [result, setResult] = useState<number>()
   const [value1, setValue1] = useState<number>()
   const [value2, setValue2] = useState<number>()
   return (

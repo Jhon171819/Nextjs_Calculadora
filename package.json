@@ -13,7 +13,8 @@
     "jest-environment-jsdom": "^29.7.0",
     "next": "^13.5.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "testing-library": "^0.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",
