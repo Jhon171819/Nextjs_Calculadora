@@ -26,7 +26,7 @@ export default function handler (req: NextApiRequest, res: NextApiResponse): voi
           res.json(Ops.sub(value1, value2))
           break
       }
-    } else if ((value1 | value2) < 0 && (value1 | value2) > -1) {
+    } else {
       Error.handlerNotANumber(res)
     }
   } else {

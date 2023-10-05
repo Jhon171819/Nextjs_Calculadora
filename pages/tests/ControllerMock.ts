@@ -1,10 +1,16 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import { type NextApiRequest, type NextApiResponse } from 'next'
 import * as Error from '../api/ErrorTreatment'
 import * as Ops from '../api/Operations'
 
+interface RequestBody {
+  value1: number
+  value2: number
+  operation: string
+}
+
 export default function handler (req: NextApiRequest, res: NextApiResponse): void {
   if (req.method === 'POST') {
-    const { value1, value2, operation } = req.body
+    const { value1, value2, operation }: RequestBody = req.body
     if (typeof value1 === 'number' && typeof value2 === 'number') {
       switch (operation) {
         case 'add':

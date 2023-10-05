@@ -1,10 +1,8 @@
-import { render, fireEvent } from '@testing-library/react'
-// import '@testing-library/jest-dom/extend-expect'
 import handler from './ControllerMock'
 import * as Operations from '../api/Operations'
 import * as ErrorTreatment from '../api/ErrorTreatment'
 import { type NextApiRequest, type NextApiResponse } from 'next'
-
+// import '@testing-library/jest-dom/extend-expect'
 function createMockResponse (data: any): NextApiResponse {
   return {
     json: jest.fn().mockImplementation(() => data)
@@ -54,21 +52,7 @@ describe('handler function', () => {
     expect(Operations.add).toBeCalledWith(5, 3)
     expect(mockResponse.json).toBeCalledWith(8)
   })
-
-  it('should handle invalid POST request', () => {
-    const req = {
-      method: 'POST',
-      body: {
-        value1: 'invalid',
-        value2: 3,
-        operation: 'add'
-      }
-    }
-
-    handler(req as NextApiRequest, mockResponse)
-
-    expect(ErrorTreatment.handlerNotANumber).toHaveBeenCalledWith(mockResponse)
-  })
+  
   it('should handle Mult function', () => {
     const req = {
       method: 'POST',
@@ -115,6 +99,21 @@ describe('handler function', () => {
 
     expect(Operations.div).toHaveBeenCalledWith(5, 3)
     expect(mockResponse.json).toHaveBeenCalledWith(1.6666666666666667)
+  })
+
+  it('should handle invalid POST request', () => {
+    const req = {
+      method: 'POST',
+      body: {
+        value1: 'invalid',
+        value2: 3,
+        operation: 'add'
+      }
+    }
+
+    handler(req as NextApiRequest, mockResponse)
+
+    expect(ErrorTreatment.handlerNotANumber).toHaveBeenCalledWith(mockResponse)
   })
 
   it('should handle invalid request method', () => {
