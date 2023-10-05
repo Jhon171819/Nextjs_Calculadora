@@ -1,6 +1,6 @@
 import { type NextApiRequest, type NextApiResponse } from 'next'
-import * as Error from '../api/ErrorTreatment'
-import * as Ops from '../api/Operations'
+import * as Error from '../pages/api/ErrorTreatment'
+import * as Ops from '../pages/api/Operations'
 
 interface RequestBody {
   value1: number

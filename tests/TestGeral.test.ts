@@ -1,6 +1,6 @@
 import handler from './ControllerMock'
-import * as Operations from '../api/Operations'
-import * as ErrorTreatment from '../api/ErrorTreatment'
+import * as Operations from '../pages/api/Operations'
+import * as ErrorTreatment from '../pages/api/ErrorTreatment'
 import { type NextApiRequest, type NextApiResponse } from 'next'
 function createMockResponse (data: any): NextApiResponse {
   return {
@@ -18,14 +18,14 @@ interface SimplifiedRequest {
     operation: string
   }
 }
-jest.mock('../api/Operations', () => ({
+jest.mock('../pages/api/Operations', () => ({
   add: jest.fn((a, b) => a + b),
   mult: jest.fn((a, b) => a * b),
   div: jest.fn((a, b) => a / b),
   sub: jest.fn((a, b) => a - b)
 }))
 
-jest.mock('../api/ErrorTreatment', () => ({
+jest.mock('../pages/api/ErrorTreatment', () => ({
   handlerNotANumber: jest.fn(),
   handlerInvReqMethod: jest.fn(),
   handlerNotFound: jest.fn()
